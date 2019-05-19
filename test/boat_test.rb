@@ -7,32 +7,32 @@ require './lib/renter'
 class BoatTest < Minitest::Test
 
   def test_it_exists
-    kayak = Boat.new(:kayak, 20)
-    assert_instance_of Boat, kayak
+    boat = Boat.new(:kayak, 20)
+    assert_instance_of Boat, boat
   end
 
   def test_it_has_attributes
-    kayak = Boat.new(:kayak, 20)
+    boat = Boat.new(:kayak, 20)
 
-    assert_equal :kayak, kayak.type
-    assert_equal 20, kayak.price_per_hour
+    assert_equal :kayak, boat.type
+    assert_equal 20, boat.price_per_hour
   end
 
   def test_hours_rented
-    kayak = Boat.new(:kayak, 20)
+    boat = Boat.new(:kayak, 20)
 
-    assert_equal 0, kayak.hours_rented
+    assert_equal 0, boat.hours_rented
   end
 
   def test_add_hour
-    kayak = Boat.new(:kayak, 20)
+    boat = Boat.new(:kayak, 20)
 
-    kayak.add_hour
-    kayak.add_hour
-    kayak.add_hour
-    kayak.hours_rented
+    boat.add_hour
+    boat.add_hour
+    boat.add_hour
+    boat.hours_rented
 
-    assert_equal 3 , kayak.hours_rented
+    assert_equal 3 , boat.hours_rented
   end
 
 end
