@@ -1,16 +1,15 @@
 require 'pry'
 class Dock
-  attr_reader :name, :max_rental_time
+  attr_reader :name, :max_rental_time, :rental_log
 
   def initialize(name, max_rental_time)
     @name = name
     @max_rental_time = max_rental_time
-    # @rental_log = {}
+    @rental_log = {}
   end
-  #
-  # def rent(@type, @name)
-  #   binding.pry
-  #   @rental_log << {@type => @name}
-  # end
+
+  def rent(boat, renter)
+    @rental_log[boat] = renter
+  end
 
 end
